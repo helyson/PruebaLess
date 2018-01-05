@@ -1,0 +1,39 @@
+.box(@width,@height,@background-color:@box-main-color)
+{
+    width: @width;
+    height:@height;
+    background-color:@background-color; 
+}
+.rounded-corners(@size: 5px) {
+  border-radius: @size;
+  -moz-border-radius: @size;
+  -webkit-border-radius: @size;
+}
+.circulo(@background-color,@f-size,@dimension) {
+  height: @dimension;
+  width: @dimension;
+  display: inline-block;
+  text-align: center;
+  font-size:@f-size;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: @background-color;
+}
+.style-input(@background-color,@border-color,@color-font:black,@conner-size:4px,@separate-bottom:10px, @padding:5px) {
+    background:@background-color;
+    width: 100%;
+    display: block;
+    border: 1px @border-color solid;
+    color:@color-font;
+    .rounded-corners(@conner-size);
+    padding: @padding;
+    margin-bottom: @separate-bottom;
+    box-sizing: border-box;
+}
+ .percentage-centered-absolute{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }

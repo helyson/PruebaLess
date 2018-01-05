@@ -1,0 +1,122 @@
+@import 'colors';
+@import 'init';
+@import 'mixins';
+@import 'font-and-sizes';
+
+/* Basics */
+html
+{
+    font-size: @base-size;
+}
+
+body
+{
+    background: @body-color;
+}
+
+/* Layout */
+#container
+{
+    margin-top:7%;
+    margin-left: auto;
+}
+
+/* Sections */
+
+.logo
+{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-size: @logo-size;
+    word-spacing: -0.25em;
+    display: block;
+    text-align: center;
+    color:@logo-color-left;
+}
+
+.font-logo-right
+{
+    color: white;
+    .circulo(@logo-color-right,@logo-size,@logo-size+@logo-size*0.4)
+}
+
+.content
+{
+    margin-left:10%;
+    margin-bottom: 15%;
+    margin-right: 10%;
+    font-weight: bold;
+}
+
+#login-form
+{
+    .box(@login-form-size,auto);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    div
+    {
+        .content;
+        input[type=textbox], input[type=password]
+        {
+            .style-input(@box-main-color,lighten(black,50%));
+        }
+        input[type=submit]
+        {
+            .style-input(lighten(@theme-color,5%), @theme-color,white);
+        }
+        input[type=button]
+        {
+            .style-input(darken(@body-color,10%), darken(@body-color,15%),black);
+        }
+        label
+        {
+            width: auto;
+        }
+    }
+}
+#information
+{
+    font-size: @base-size*0.7;
+    font-weight: normal !important;
+    p
+    {
+        display: block;
+        margin-bottom: 5%;
+        text-align: center;
+        img
+        {
+            width: auto;
+            height:10px; 
+        }
+    }
+}
+footer
+{
+    text-align: center;
+    color: @footer-font-color;
+    div
+    {
+        padding: 5px;
+        .box(@login-form-size,auto, transparent);
+          display: inline-block;
+        a
+        {
+            text-align: center;
+            margin-left: @login-form-size*0.03;
+            margin-right: @login-form-size*0.03;
+            text-decoration: none;
+            &:hover
+            {
+                text-decoration: underline;
+            }
+            &:active 
+            {
+                color: darken(@footer-font-color,15%);
+            }
+        }
+    }
+}
+   
+    
+   
